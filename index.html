@@ -13,31 +13,31 @@
     --paper-2:#EFEADC;
     --muted:#7A7566;
     --line:rgba(27,42,74,0.14);
- 
+
     --mon:#E1663F;
     --tue:#1F8A83;
     --wed:#C9962C;
     --thu:#6B5B95;
     --fri:#B23A6B;
- 
+
     --lab-tag:#1B2A4A;
     --lec-tag:#B0532C;
     --combo-tag:#3E7A46;
   }
- 
+
   *{box-sizing:border-box; margin:0; padding:0;}
- 
+
   body{
     background:var(--paper);
     color:var(--ink);
     font-family:'Inter', sans-serif;
     -webkit-font-smoothing:antialiased;
   }
- 
+
   ::selection{ background:var(--tue); color:var(--paper); }
- 
+
   .wrap{ max-width:1180px; margin:0 auto; padding:0 28px 80px; }
- 
+
   header.hero{
     padding:56px 28px 40px;
     position:relative;
@@ -62,7 +62,7 @@
     margin-bottom:18px;
   }
   .eyebrow .dot{ width:6px; height:6px; border-radius:50%; background:var(--tue); }
- 
+
   h1.title{
     font-family:'Fraunces', serif;
     font-weight:600;
@@ -75,7 +75,7 @@
     font-weight:400;
     color:var(--tue);
   }
- 
+
   .hero-meta{
     display:flex;
     flex-wrap:wrap;
@@ -97,7 +97,7 @@
     color:var(--muted);
     margin-top:2px;
   }
- 
+
   .flag-note{
     margin-top:26px;
     padding:12px 16px;
@@ -109,7 +109,7 @@
     max-width:560px;
   }
   .flag-note b{ color:var(--mon); }
- 
+
   nav.days{
     display:flex;
     gap:0;
@@ -145,13 +145,13 @@
     color:var(--paper);
   }
   nav.days button[data-day="ALL"].active{ background:var(--tue); }
- 
+
   .grid{
     display:grid;
     grid-template-columns:repeat(auto-fill, minmax(300px, 1fr));
     gap:16px;
   }
- 
+
   .card{
     background:var(--paper-2);
     border:1px solid var(--line);
@@ -167,7 +167,7 @@
   .card.day-WED{ border-left-color:var(--wed); }
   .card.day-THU{ border-left-color:var(--thu); }
   .card.day-FRI{ border-left-color:var(--fri); }
- 
+
   .card-top{
     display:flex;
     justify-content:space-between;
@@ -196,7 +196,7 @@
     font-size:20px;
     line-height:1.15;
   }
- 
+
   .sessions{
     display:flex;
     flex-direction:column;
@@ -225,7 +225,7 @@
   .session .time{ font-family:'IBM Plex Mono', monospace; color:var(--ink); }
   .session .room{ color:var(--muted); font-size:12.5px; margin-left:auto; }
   .session .room.tba{ color:var(--mon); font-weight:600; }
- 
+
   .card-foot{
     display:flex;
     justify-content:space-between;
@@ -243,7 +243,7 @@
     cursor:pointer;
     border-bottom:1px dotted var(--muted);
   }
- 
+
   .empty-state{
     grid-column:1/-1;
     text-align:center;
@@ -252,7 +252,7 @@
     font-family:'IBM Plex Mono', monospace;
     font-size:13px;
   }
- 
+
   .totals{
     margin-top:56px;
     border:1.5px solid var(--ink);
@@ -280,7 +280,7 @@
   }
   .totals .bars{ display:flex; gap:4px; }
   .totals .bar{ width:8px; height:22px; background:var(--tue); border-radius:1px; }
- 
+
   footer.sig{
     text-align:center;
     margin-top:26px;
@@ -289,20 +289,20 @@
     color:var(--muted);
     letter-spacing:0.04em;
   }
- 
+
   @media (max-width:640px){
     nav.days{ flex-wrap:wrap; }
     nav.days button{ flex:1 1 30%; border-bottom:1.5px solid var(--ink); }
     .session .room{ margin-left:0; }
   }
- 
+
   @media (prefers-reduced-motion: reduce){
     *{ transition:none !important; }
   }
 </style>
 </head>
 <body>
- 
+
 <header class="hero">
   <div class="hero-inner">
     <div class="eyebrow"><span class="dot"></span> BS INFORMATION TECHNOLOGY · A.Y. 2025</div>
@@ -314,11 +314,11 @@
       <div class="meta-item"><div class="num">8</div><div class="lbl">Courses</div></div>
       <div class="meta-item"><div class="num">23</div><div class="lbl">Total units</div></div>
       <div class="meta-item"><div class="num">5</div><div class="lbl">Days on campus</div></div>
-      <div class="meta-item"><div class="num">7</div><div class="lbl">Faculty</div></div>
+      <div class="meta-item"><div class="num">8</div><div class="lbl">Faculty</div></div>
     </div>
   </div>
 </header>
- 
+
 <div class="wrap">
   <nav class="days" id="dayNav">
     <button data-day="ALL" class="active">ALL<span class="count" id="c-ALL"></span></button>
@@ -328,9 +328,9 @@
     <button data-day="THU">THU<span class="count" id="c-THU"></span></button>
     <button data-day="FRI">FRI<span class="count" id="c-FRI"></span></button>
   </nav>
- 
+
   <div class="grid" id="grid"></div>
- 
+
   <div class="totals">
     <div>
       <div class="label">Total units this term</div>
@@ -338,10 +338,10 @@
     </div>
     <div class="bars" id="unitBars"></div>
   </div>
- 
+
   <footer class="sig">NetSuite sections listed on each card · tap to copy</footer>
 </div>
- 
+
 <script>
 const courses = [
   {
@@ -355,7 +355,6 @@ const courses = [
       {day:"FRI", type:"COMBO", time:"11:00 AM – 1:30 PM", room:"401 NB"}
     ]
   },
- 
   {
     code:"IT282",
     name:"Fundamentals of Database Management System",
@@ -428,14 +427,14 @@ const courses = [
     netsuite:"IT271-LEC-Sec3-MR / IT271-LAB-Sec3-MR",
     sessions:[
       {day:"WED", type:"LEC", time:"7:30 AM – 10:00 AM", room:"Room 607"},
-      {day:"THU", type:"LAB", time:"1:30 PM – 4:00 PM", room:"208 Old Bldg"}
+      {day:"THU", type:"LAB", time:"1:30 PM – 4:00 PM", room:"208 Old Building"}
     ]
   }
 ];
- 
+
 const grid = document.getElementById('grid');
 const dayOrder = ["MON","TUE","WED","THU","FRI"];
- 
+
 function dayCounts(){
   const counts = {MON:0,TUE:0,WED:0,THU:0,FRI:0};
   courses.forEach(c => {
@@ -447,21 +446,21 @@ function dayCounts(){
 const counts = dayCounts();
 dayOrder.forEach(d => document.getElementById('c-'+d).textContent = counts[d]);
 document.getElementById('c-ALL').textContent = courses.length;
- 
+
 function render(filter){
   grid.innerHTML = "";
   const visible = courses.filter(c => filter === "ALL" || c.sessions.some(s => s.day === filter));
- 
+
   if(visible.length === 0){
     grid.innerHTML = '<div class="empty-state">No classes scheduled.</div>';
     return;
   }
- 
+
   visible.forEach(c => {
     const primaryDay = filter !== "ALL" ? filter : c.sessions[0].day;
     const card = document.createElement('div');
     card.className = `card day-${primaryDay}`;
- 
+
     const sessionsHTML = c.sessions
       .filter(s => filter === "ALL" || s.day === filter)
       .map(s => `
@@ -472,7 +471,7 @@ function render(filter){
           <span class="room${s.tba ? ' tba' : ''}">${s.room}</span>
         </div>
       `).join("");
- 
+
     card.innerHTML = `
       <div class="card-top">
         <span class="code">${c.code}</span>
@@ -484,11 +483,11 @@ function render(filter){
         <span class="prof">${c.prof}</span>
       </div>
     `;
- 
+
     grid.appendChild(card);
   });
 }
- 
+
 document.getElementById('dayNav').addEventListener('click', (e) => {
   const btn = e.target.closest('button');
   if(!btn) return;
@@ -496,16 +495,16 @@ document.getElementById('dayNav').addEventListener('click', (e) => {
   btn.classList.add('active');
   render(btn.dataset.day);
 });
- 
+
 const barsWrap = document.getElementById('unitBars');
 for(let i=0;i<23;i++){
   const b = document.createElement('div');
   b.className = 'bar';
   barsWrap.appendChild(b);
 }
- 
+
 render("ALL");
 </script>
- 
+
 </body>
 </html>
