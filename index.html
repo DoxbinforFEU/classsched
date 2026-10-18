@@ -23,9 +23,6 @@
     --lab-tag:#1B2A4A;
     --lec-tag:#B0532C;
     --combo-tag:#3E7A46;
-
-    --dsa:#1F8A83;
-    --elec:#6B5B95;
   }
 
   *{box-sizing:border-box; margin:0; padding:0;}
@@ -149,167 +146,6 @@
   }
   nav.days button[data-day="ALL"].active{ background:var(--tue); }
 
-  nav.pages{
-    display:flex;
-    gap:0;
-    margin-top:34px;
-    border:1.5px solid var(--ink);
-    overflow:hidden;
-    border-radius:3px;
-    max-width:420px;
-  }
-  nav.pages button{
-    flex:1;
-    font-family:'IBM Plex Mono', monospace;
-    font-size:12.5px;
-    letter-spacing:0.08em;
-    padding:12px 8px;
-    background:transparent;
-    border:none;
-    border-right:1.5px solid var(--ink);
-    color:var(--ink);
-    cursor:pointer;
-    text-transform:uppercase;
-    transition:background .18s ease, color .18s ease;
-  }
-  nav.pages button:last-child{ border-right:none; }
-  nav.pages button.active{ background:var(--ink); color:var(--paper); }
-
-  nav.subjects{
-    display:flex;
-    gap:0;
-    margin:0 0 30px;
-    border:1.5px solid var(--ink);
-    overflow:hidden;
-    border-radius:3px;
-  }
-  nav.subjects button{
-    flex:1;
-    font-family:'IBM Plex Mono', monospace;
-    font-size:13px;
-    letter-spacing:0.06em;
-    padding:14px 8px;
-    background:transparent;
-    border:none;
-    border-right:1.5px solid var(--ink);
-    color:var(--ink);
-    cursor:pointer;
-    text-transform:uppercase;
-    transition:background .18s ease, color .18s ease;
-  }
-  nav.subjects button:last-child{ border-right:none; }
-  nav.subjects button .count{
-    display:block;
-    font-family:'Fraunces', serif;
-    font-size:20px;
-    margin-top:2px;
-  }
-  nav.subjects button.active{ background:var(--ink); color:var(--paper); }
-  nav.subjects button[data-subj="ALL"].active{ background:var(--tue); }
-  nav.subjects button[data-subj="DSA"].active{ background:var(--dsa); }
-  nav.subjects button[data-subj="ELEC"].active{ background:var(--elec); }
-
-  .section-head{
-    display:flex;
-    align-items:baseline;
-    justify-content:space-between;
-    gap:16px;
-    margin:40px 0 16px;
-    padding-bottom:10px;
-    border-bottom:1px solid var(--line);
-  }
-  .section-head:first-of-type{ margin-top:0; }
-  .section-head h2{
-    font-family:'Fraunces', serif;
-    font-weight:600;
-    font-size:26px;
-  }
-  .section-head .subj-sub{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:11.5px;
-    color:var(--muted);
-    letter-spacing:0.04em;
-  }
-
-  .group-card{
-    background:var(--paper-2);
-    border:1px solid var(--line);
-    border-left:5px solid var(--ink);
-    border-radius:2px;
-    padding:20px 22px;
-    display:flex;
-    flex-direction:column;
-    gap:12px;
-  }
-  .group-card.subj-DSA{ border-left-color:var(--dsa); }
-  .group-card.subj-ELEC{ border-left-color:var(--elec); }
-
-  .group-card .card-top{
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-start;
-    gap:10px;
-  }
-  .group-name{
-    font-family:'Fraunces', serif;
-    font-weight:600;
-    font-size:20px;
-    line-height:1.15;
-  }
-  .group-topic{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:11px;
-    color:var(--muted);
-    margin-top:2px;
-  }
-  .size-tag{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:11px;
-    color:var(--paper);
-    padding:3px 8px;
-    border-radius:20px;
-    white-space:nowrap;
-    flex-shrink:0;
-  }
-  .group-card.subj-DSA .size-tag{ background:var(--dsa); }
-  .group-card.subj-ELEC .size-tag{ background:var(--elec); }
-
-  .members{
-    display:flex;
-    flex-direction:column;
-    gap:8px;
-  }
-  .member{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    font-size:14px;
-  }
-  .member .avatar{
-    width:26px; height:26px;
-    border-radius:50%;
-    flex-shrink:0;
-    display:flex; align-items:center; justify-content:center;
-    font-family:'IBM Plex Mono', monospace;
-    font-size:10.5px;
-    font-weight:600;
-    color:var(--paper);
-  }
-  .group-card.subj-DSA .member .avatar{ background:var(--dsa); }
-  .group-card.subj-ELEC .member .avatar{ background:var(--elec); }
-  .member .name{ color:var(--ink); }
-  .member .name.both{ font-weight:600; }
-  .member .flag{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:9.5px;
-    color:var(--mon);
-    border:1px solid rgba(225,102,63,0.4);
-    background:rgba(225,102,63,0.1);
-    padding:1px 5px;
-    border-radius:20px;
-    margin-left:auto;
-  }
-
   .grid{
     display:grid;
     grid-template-columns:repeat(auto-fill, minmax(300px, 1fr));
@@ -389,6 +225,13 @@
   .session .time{ font-family:'IBM Plex Mono', monospace; color:var(--ink); }
   .session .room{ color:var(--muted); font-size:12.5px; margin-left:auto; }
   .session .room.tba{ color:var(--mon); font-weight:600; }
+  .section-codes{
+    color:var(--muted);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10px;
+    line-height:1.6;
+    overflow-wrap:anywhere;
+  }
 
   .card-foot{
     display:flex;
@@ -480,15 +323,10 @@
       <div class="meta-item"><div class="num">5</div><div class="lbl">Days on campus</div></div>
       <div class="meta-item"><div class="num">7</div><div class="lbl">Faculty</div></div>
     </div>
-    <nav class="pages" id="pageNav">
-      <button data-page="schedule" class="active">Schedule</button>
-      <button data-page="groups">Groups</button>
-    </nav>
   </div>
 </header>
 
 <div class="wrap">
-<div id="page-schedule">
   <nav class="days" id="dayNav">
     <button data-day="ALL" class="active">ALL<span class="count" id="c-ALL"></span></button>
     <button data-day="MON">MON<span class="count" id="c-MON"></span></button>
@@ -508,21 +346,7 @@
     <div class="bars" id="unitBars"></div>
   </div>
 
-  <footer class="sig">NetSuite sections listed on each card · tap to copy</footer>
-</div>
-
-<div id="page-groups" style="display:none">
-  <nav class="subjects" id="subjNav">
-    <button data-subj="ALL" class="active">ALL<span class="count" id="c-ALL"></span></button>
-    <button data-subj="DSA">DSA<span class="count" id="c-DSA"></span></button>
-    <button data-subj="ELEC">ELECTIVE 1<span class="count" id="c-ELEC"></span></button>
-  </nav>
-
-  <div id="groupsContent"></div>
-
-  <footer class="sig">IT251 · Final Project Groups · ITE211 · Topic Groupings</footer>
-</div>
-
+  <footer class="sig">NetSuite sections listed on each card</footer>
 </div>
 
 <script>
@@ -532,7 +356,7 @@ const courses = [
     name:"Networking 1",
     units:3,
     prof:"Jay Concepcion",
-    netsuite:"",
+    netsuite:"IT2112-LEC-Sec5-MR / IT2112-LAB-Sec5-MR",
     sessions:[
       {day:"TUE", type:"COMBO", time:"11:00 AM – 1:30 PM", room:"TBA", tba:true},
       {day:"FRI", type:"COMBO", time:"11:00 AM – 1:30 PM", room:"Room 604"}
@@ -543,11 +367,11 @@ const courses = [
     code:"IT282",
     name:"Fundamentals of Database Management System",
     units:3,
-    prof:"Jerick M. Quintua",
+    prof:"Angel Galario",
     netsuite:"IT282-LAB-Sec3-MR / IT282-LEC-Sec3-MR",
     sessions:[
-      {day:"MON", type:"COMBO", time:"11:00 AM – 1:30 PM", room:"Room 309"},
-      {day:"THU", type:"COMBO", time:"11:00 AM – 1:30 PM", room:"Room 403"}
+      {day:"MON", type:"COMBO", time:"10:00 AM – 12:30 PM", room:"Room 309"},
+      {day:"THU", type:"COMBO", time:"9:30 AM – 11:30 AM", room:"Room 403"}
     ]
   },
   {
@@ -555,7 +379,7 @@ const courses = [
     name:"Dance, Sports, Martial Arts, Group Exercises & Outdoor Activities",
     units:2,
     prof:"Miguel Cedrickh Ona",
-    netsuite:"PATHFIT231-LEC-Sec3-MR",
+    netsuite:"PATHFIT 231-LEC-Sec3-MR",
     sessions:[
       {day:"MON", type:"LEC", time:"2:00 PM – 4:00 PM", room:"Dance Room"}
     ]
@@ -600,7 +424,7 @@ const courses = [
     prof:"Rodel Villarez",
     netsuite:"ITE211-LAB-Sec3-MR / ITE211-LEC-Sec3-MR",
     sessions:[
-      {day:"WED", type:"COMBO", time:"1:30 PM – 6:00 PM", room:"MACLAB 401"}
+      {day:"WED", type:"COMBO", time:"1:30 PM – 6:30 PM", room:"MACLAB 401"}
     ]
   },
   {
@@ -663,6 +487,7 @@ function render(filter){
       </div>
       <div class="course-name">${c.name}</div>
       <div class="sessions">${sessionsHTML}</div>
+      <div class="section-codes">${c.netsuite.split(" / ").join("<br>")}</div>
       <div class="card-foot">
         <span class="prof">${c.prof}</span>
       </div>
@@ -688,137 +513,6 @@ for(let i=0;i<23;i++){
 }
 
 render("ALL");
-
-/* ---------------- Groups page ---------------- */
-
-const dsaGroups = [
-  { label:"Group 1", members:["Elcid Justine Taroma","Kenneth Andrei Fernandez","Kurt Racel Jacob","Pauleen Claire Rivera"] },
-  { label:"Group 2", members:["Angel Ronquillo","John Michael Sze","Josef Renzie Tandoc","Marcus Curt Dadivas"] },
-  { label:"Group 3", members:["Brent Joshua Ray Abriam","Lance Emmanuel Diego","Shawn Ervhin Manaog"] },
-  { label:"Group 4", members:["Aya Janel Jimenez","Jefflyn Faith Lamila","Jian Bert Quibete","Maria Juliza Padpad"] },
-  { label:"Group 5", members:["Aneeza Amor Castro","Janah Alaika Olivar","Rhian Kyrish Maurie Metrio"] },
-  { label:"Group 6", members:["Johann Paul Leano","Johnromeo Estrellado","Joseph Peralta"] },
-  { label:"Group 7", members:["Franz Amiel Colico","Jhun Clarence Carcueva","Malla Denise Rivera","Raiza Ann Marie Donesa"] },
-  { label:"Group 8", members:["Dirk Martin Sotto","John Patrick De Luna","Kyro Anton Carino","Mikhail Pabular"] }
-];
-
-const elecGroups = [
-  { label:"Topic 1", members:["Jhun Clarence Carcueva","Malla Denise Rivera","Josef Renzie Tandoc"] },
-  { label:"Topic 2", members:["Franz Amiel Colico","Kyro Anton Cariño","Raiza Ann Marie Donesa"] },
-  { label:"Topic 3", members:["Dicen Kharl Andrew","Ciane Arabos","Earl Justine Bughao"] },
-  { label:"Topic 4", members:["Roi Daniel Bordeos","Jan Michael Ogbac","Janah Alaika Olivar"] },
-  { label:"Topic 5", members:["John Michael Sze","Marcus Curt Dadivas","Angel Ronquillo"] },
-  { label:"Topic 6", members:["Pauleen Claire Rivera","Rhian Kyrish Maurie Metrio","Aneeza Amor Castro"] },
-  { label:"Topic 7", members:["Louijie M. Bandala","Daniela Gamora","Kurt Rassel Baybay"] },
-  { label:"Topic 8", members:["Kurt Racel Jacob","Elcid Justine Taroma","Kenneth Andrei Fernandez"] },
-  { label:"Topic 9", members:["Mikhail Pabular","John Romeo Estrellado","Ryan Bergonia"] },
-  { label:"Topic 10", members:["Joseph Peralta","Oneal Morte","Johann Leano"] },
-  { label:"Topic 11", members:["Shawn Ervhin T. Manaog","Dirk Martin Sotto","John Patrick T. De Luna"] },
-  { label:"Topic 12", members:["Aya Jimenez","Jian Quibete","Jefflyn Faith Lamila"] },
-  { label:"Topic 13", members:["Lance Diego","Anthony Urdaneta","Brent Abriam"] }
-];
-
-function normalizeName(name){
-  return name.toLowerCase()
-    .replace(/[.,]/g,"")
-    .replace(/ñ/g,"n")
-    .split(/\s+/)
-    .filter(Boolean)
-    .sort()
-    .join(" ");
-}
-
-const dsaNames = new Set();
-dsaGroups.forEach(g => g.members.forEach(m => dsaNames.add(normalizeName(m))));
-const elecNames = new Set();
-elecGroups.forEach(g => g.members.forEach(m => elecNames.add(normalizeName(m))));
-
-function initials(name){
-  const parts = name.replace(/[.,]/g,"").split(/\s+/).filter(Boolean);
-  const first = parts[0]?.[0] || "";
-  const last = parts[parts.length-1]?.[0] || "";
-  return (first+last).toUpperCase();
-}
-
-function memberHTML(name, subj){
-  const norm = normalizeName(name);
-  const inBoth = subj === "DSA" ? elecNames.has(norm) : dsaNames.has(norm);
-  return `
-    <div class="member">
-      <span class="avatar">${initials(name)}</span>
-      <span class="name${inBoth ? ' both' : ''}">${name}</span>
-      ${inBoth ? '<span class="flag">also in ' + (subj === "DSA" ? "Elective 1" : "DSA") + '</span>' : ''}
-    </div>
-  `;
-}
-
-function groupCardHTML(group, subj, sectionLabel){
-  return `
-    <div class="group-card subj-${subj}">
-      <div class="card-top">
-        <div>
-          <div class="group-name">${group.label}</div>
-          <div class="group-topic">${sectionLabel}</div>
-        </div>
-        <span class="size-tag">${group.members.length} student${group.members.length > 1 ? 's' : ''}</span>
-      </div>
-      <div class="members">
-        ${group.members.map(m => memberHTML(m, subj)).join("")}
-      </div>
-    </div>
-  `;
-}
-
-function groupSectionHTML(title, sub, groups, subj){
-  return `
-    <div class="section-head">
-      <h2>${title}</h2>
-      <span class="subj-sub">${sub}</span>
-    </div>
-    <div class="grid">
-      ${groups.map(g => groupCardHTML(g, subj, sub)).join("")}
-    </div>
-  `;
-}
-
-const groupsContent = document.getElementById('groupsContent');
-
-function renderGroups(filter){
-  let html = "";
-  if(filter === "ALL" || filter === "DSA"){
-    html += groupSectionHTML("Data Structures and Algorithms", "IT251 · Final Project Groups", dsaGroups, "DSA");
-  }
-  if(filter === "ALL" || filter === "ELEC"){
-    html += groupSectionHTML("Elective 1", "ITE211 · Topic Groupings", elecGroups, "ELEC");
-  }
-  groupsContent.innerHTML = html || '<div class="empty-state">No groups to show.</div>';
-}
-
-document.getElementById('c-ALL').textContent = dsaGroups.length + elecGroups.length;
-document.getElementById('c-DSA').textContent = dsaGroups.length;
-document.getElementById('c-ELEC').textContent = elecGroups.length;
-
-document.getElementById('subjNav').addEventListener('click', (e) => {
-  const btn = e.target.closest('button');
-  if(!btn) return;
-  document.querySelectorAll('#subjNav button').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  renderGroups(btn.dataset.subj);
-});
-
-renderGroups("ALL");
-
-/* ---------------- Page switch (Schedule / Groups) ---------------- */
-
-document.getElementById('pageNav').addEventListener('click', (e) => {
-  const btn = e.target.closest('button');
-  if(!btn) return;
-  document.querySelectorAll('#pageNav button').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  const page = btn.dataset.page;
-  document.getElementById('page-schedule').style.display = page === 'schedule' ? '' : 'none';
-  document.getElementById('page-groups').style.display = page === 'groups' ? '' : 'none';
-});
 </script>
 
 </body>
